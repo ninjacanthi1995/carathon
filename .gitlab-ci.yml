@@ -1,0 +1,35 @@
+stages:
+  - build
+  - deploy
+
+default:
+  image: node
+
+.standard-rules:
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
+build-job:
+  stage: build
+  script:
+    - npm install
+    - npm run build
+  artifacts:
+    paths:
+      - "build/"
+  extends: 
+    - .standard-rules
+
+pages:
+  stage: deploy
+  image: busybox
+  script: 
+    - mv build/ public/
+  dependencies:
+    - build-job
+  artifacts:
+    paths:
+      - "public/"
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
