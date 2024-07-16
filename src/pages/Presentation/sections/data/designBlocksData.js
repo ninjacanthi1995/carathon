@@ -8,7 +8,7 @@ export default [
           "https://i1-vnexpress.vnecdn.net/2023/05/10/Vios-2023-10_1683690128.jpg?w=2400&h=0&q=100&dpr=1&fit=crop&s=LPsTjgivZ2T5xKJYQiVjHg&t=image",
         name: "Toyota Vios",
         price: 1048,
-        route: "/sections/page-sections/page-headers",
+        route: "/detail",
       },
       {
         image:

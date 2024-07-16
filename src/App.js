@@ -26,6 +26,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import theme from "assets/theme";
 import Presentation from "layouts/pages/presentation";
 import Find from "pages/Find/index";
+import Detail from "pages/Detail/index";
 
 // Material Kit 2 React routes
 import routes from "routes";
@@ -59,6 +60,7 @@ export default function App() {
         {getRoutes(routes)}
         <Route path="/presentation" element={<Presentation />} />
         <Route path="/find" element={<Find />} />
+        <Route path="/detail" element={<Detail />} />
         <Route path="*" element={<Navigate to="/presentation" />} />
       </Routes>
     </ThemeProvider>

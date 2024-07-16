@@ -38,11 +38,12 @@ import routes from "routes";
 import footerRoutes from "footer.routes";
 
 import DesignBlocks from "pages/Presentation/sections/DesignBlocks";
+import { Container } from "@mui/material";
 
 // Images
 // import bgImage from "assets/images/bg-about-us.jpg";
 
-function Find() {
+function Detail() {
   return (
     <>
       <DefaultNavbar
@@ -56,6 +57,10 @@ function Find() {
         transparent
         light
       />
+      <Container>
+
+      </Container>
+      
       {/* <MKBox
         minHeight="75vh"
         width="100%"
@@ -141,4 +146,4 @@ function Find() {
   );
 }
 
-export default Find;
+export default Detail;
