@@ -32,8 +32,18 @@ import footerRoutes from "footer.routes";
 
 // Image
 import bgImage from "assets/images/illustrations/illustration-reset.jpg";
+import { Autocomplete } from "@mui/material";
+import TextField from "@mui/material/TextField";
+import { useDispatch, useSelector } from "react-redux";
+import { setPickupDate } from "reduxData/slices/pickupDateSlice";
+import { setReturnDate } from "reduxData/slices/returnDateSlice";
+import MKDatePicker from "components/MKDatePicker";
 
 function ContactUs() {
+  const pickupDate = useSelector((state) => state.pickupDate.value);
+  const returnDate = useSelector((state) => state.returnDate.value);
+  const dispatch = useDispatch();
+
   return (
     <>
       <MKBox position="fixed" top="0.5rem" width="100%">
@@ -90,38 +100,69 @@ function ContactUs() {
               mt={-3}
             >
               <MKTypography variant="h3" color="white">
-                Contact us
+                Liên hệ với chúng tôi
               </MKTypography>
             </MKBox>
             <MKBox p={3}>
               <MKTypography variant="body2" color="text" mb={3}>
-                For further questions, including partnership opportunities, please email
-                hello@creative-tim.com or contact using our contact form.
+                Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất có thể. Hoặc bạn có thể liên
+                hệ với chúng tôi qua mail carathon@gmail.com
               </MKTypography>
               <MKBox width="100%" component="form" method="post" autoComplete="off">
                 <Grid container spacing={3}>
-                  <Grid item xs={12} md={6}>
-                    <MKInput
-                      variant="standard"
-                      label="Full Name"
-                      InputLabelProps={{ shrink: true }}
-                      fullWidth
+                  <Grid item xs={12}>
+                    <Autocomplete
+                      disablePortal
+                      id="combo-box-demo"
+                      options={[]}
+                      renderInput={(params) => <TextField {...params} label="Loại xe" />}
                     />
                   </Grid>
                   <Grid item xs={12} md={6}>
-                    <MKInput
-                      type="email"
-                      variant="standard"
-                      label="Email"
-                      InputLabelProps={{ shrink: true }}
-                      fullWidth
+                    <Autocomplete
+                      disablePortal
+                      id="combo-box-demo"
+                      options={[]}
+                      renderInput={(params) => <TextField {...params} label="Điểm nhận" />}
+                    />
+                  </Grid>
+                  <Grid item xs={12} md={6}>
+                    <Autocomplete
+                      disablePortal
+                      id="combo-box-demo"
+                      options={[]}
+                      renderInput={(params) => <TextField {...params} label="Điểm trả" />}
+                    />
+                  </Grid>
+                  <Grid item xs={12} md={6}>
+                    <MKTypography variant="body2" color="text">
+                      Ngày nhận
+                    </MKTypography>
+                    <MKDatePicker
+                      input={{ placeholder: "Ngày nhận" }}
+                      onChange={(e) => {
+                        dispatch(setPickupDate(e[0].toString()));
+                      }}
+                      value={new Date(pickupDate)}
+                    />
+                  </Grid>
+                  <Grid item xs={12} md={6}>
+                    <MKTypography variant="body2" color="text">
+                      Ngày trả
+                    </MKTypography>
+                    <MKDatePicker
+                      input={{ placeholder: "Ngày trả" }}
+                      onChange={(e) => {
+                        dispatch(setReturnDate(e[0].toString()));
+                      }}
+                      value={new Date(returnDate)}
                     />
                   </Grid>
                   <Grid item xs={12}>
                     <MKInput
                       variant="standard"
-                      label="What can we help you?"
-                      placeholder="Describe your problem in at least 250 characters"
+                      label="Yêu cầu thêm"
+                      placeholder="Bạn có yêu cầu gì thêm không ạ ?"
                       InputLabelProps={{ shrink: true }}
                       multiline
                       fullWidth
@@ -131,7 +172,7 @@ function ContactUs() {
                 </Grid>
                 <Grid container item justifyContent="center" xs={12} mt={5} mb={2}>
                   <MKButton type="submit" variant="gradient" color="info">
-                    Send Message
+                    Gửi yêu cầu thuê xe
                   </MKButton>
                 </Grid>
               </MKBox>

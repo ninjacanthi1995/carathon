@@ -22,14 +22,26 @@ import MKButton from "components/MKButton";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import cities from "pages/Presentation/sections/data/citiesData";
-import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { MobileDateTimePicker } from "@mui/x-date-pickers/MobileDateTimePicker";
+import { useDispatch, useSelector } from "react-redux";
+import { setPickupDate } from "reduxData/slices/pickupDateSlice";
+import { setReturnDate } from "reduxData/slices/returnDateSlice";
+import MKDatePicker from "components/MKDatePicker";
+// import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function SearchForm() {
+  const pickupDate = useSelector((state) => state.pickupDate.value);
+  const returnDate = useSelector((state) => state.returnDate.value);
+  const dispatch = useDispatch();
+
   return (
-    <MKBox width="100%" component="form" method="get" autoComplete="off" action="/find">
+    <MKBox
+      width="100%"
+      component="form"
+      method="get"
+      autoComplete="off"
+      // action={`/find?pickupDate=azeaze`}
+    >
       <MKBox p={3} width="auto">
         <Grid container spacing={3} alignItems="center" justifyContent="center" width="auto">
           <Grid item xs={12} md={3}>
@@ -49,22 +61,28 @@ function SearchForm() {
             />
           </Grid>
           <Grid item xs={12} md={3} xl={2}>
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <DemoContainer components={["MobileDateTimePicker"]}>
-                <MobileDateTimePicker label="Ngày nhận" />
-              </DemoContainer>
-            </LocalizationProvider>
+            <MKDatePicker
+              input={{ placeholder: "Ngày nhận" }}
+              onChange={(e) => {
+                console.log(e[0]);
+                dispatch(setPickupDate(e[0].toString()));
+              }}
+              value={new Date(pickupDate)}
+            />
           </Grid>
           <Grid item xs={12} md={3} xl={2}>
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <DemoContainer components={["MobileDateTimePicker"]}>
-                <MobileDateTimePicker label="Ngày trả" />
-              </DemoContainer>
-            </LocalizationProvider>
+            <MKDatePicker
+              input={{ placeholder: "Ngày trả" }}
+              onChange={(e) => {
+                console.log(e[0]);
+                dispatch(setReturnDate(e[0].toString()));
+              }}
+              value={new Date(returnDate)}
+            />
           </Grid>
           <Grid item>
-            <MKButton type="submit" variant="gradient" color="dark">
-              Tìm xe
+            <MKButton variant="gradient" color="dark">
+              <Link to={`/find`}>Tìm xe</Link>
             </MKButton>
           </Grid>
         </Grid>
