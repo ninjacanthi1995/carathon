@@ -1,6 +1,7 @@
 {
   "files": {
-    "main.js": "/carathon/static/js/main.25a1dca8.js",
+    "main.css": "/carathon/static/css/main.dd6a70ae.css",
+    "main.js": "/carathon/static/js/main.a031d8ca.js",
     "static/media/rotating-card-bg-front.jpeg": "/carathon/static/media/rotating-card-bg-front.bdcdfadc0dacb9bc5f23.jpeg",
     "static/media/macbook.png": "/carathon/static/media/macbook.e0a8c5d5cc02d71b6d86.png",
     "static/media/bg-coworking.jpeg": "/carathon/static/media/bg-coworking.06bccc47fe6ae5366bf8.jpeg",
@@ -32,9 +33,11 @@
     "static/media/logo-nasa.svg": "/carathon/static/media/logo-nasa.b4e79ad93e48f27643c48621609ba18b.svg",
     "static/media/logo-netflix.svg": "/carathon/static/media/logo-netflix.41468e1be7ec61f28c77c2d4da86083e.svg",
     "index.html": "/carathon/index.html",
-    "main.25a1dca8.js.map": "/carathon/static/js/main.25a1dca8.js.map"
+    "main.dd6a70ae.css.map": "/carathon/static/css/main.dd6a70ae.css.map",
+    "main.a031d8ca.js.map": "/carathon/static/js/main.a031d8ca.js.map"
   },
   "entrypoints": [
-    "static/js/main.25a1dca8.js"
+    "static/css/main.dd6a70ae.css",
+    "static/js/main.a031d8ca.js"
   ]
 }
