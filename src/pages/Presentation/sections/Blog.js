@@ -31,7 +31,7 @@ import ExampleCard from "pages/Presentation/components/ExampleCard";
 // Data
 import data from "pages/Presentation/sections/data/pagesData";
 
-function Pages() {
+function Blog() {
   const renderData = data.map(({ image, name, route }) => (
     <Grid item xs={12} md={6} sx={{ mb: { xs: 3, lg: 0 } }} key={name}>
       <Link to={route}>
@@ -70,12 +70,12 @@ function Pages() {
       </Container>
       <Container sx={{ mt: { xs: 8, lg: 16 } }}>
         <Grid container spacing={3}>
-          <Grid item xs={12} lg={9} sx={{ mt: 3, px: { xs: 0, lg: 8 } }}>
+          <Grid item xs={12} sx={{ mt: 3, px: { xs: 0, lg: 8 } }}>
             <Grid container spacing={3}>
               {renderData}
             </Grid>
           </Grid>
-          <Grid item xs={12} lg={3}>
+          {/* <Grid item xs={12} lg={3}>
             <MKBox position="sticky" top="100px" pb={{ xs: 2, lg: 6 }}>
               <MKTypography variant="h3" fontWeight="bold" mb={1}>
                 Presentation Pages for Company, Landing Pages, Blogs and Support
@@ -85,11 +85,11 @@ function Pages() {
                 business, not on the design.
               </MKTypography>
             </MKBox>
-          </Grid>
+          </Grid> */}
         </Grid>
       </Container>
     </MKBox>
   );
 }
 
-export default Pages;
+export default Blog;

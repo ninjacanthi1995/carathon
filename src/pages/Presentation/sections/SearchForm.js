@@ -99,7 +99,9 @@ function SearchForm() {
           </Grid>
           <Grid item>
             <MKButton variant="gradient" color="dark">
-              <Link to={`/find`}>Tìm xe</Link>
+              <Link style={{ color: "#FFF" }} to={`/find`}>
+                Tìm xe
+              </Link>
             </MKButton>
           </Grid>
         </Grid>

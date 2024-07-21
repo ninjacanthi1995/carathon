@@ -26,11 +26,11 @@ import MKTypography from "components/MKTypography";
 import DefaultReviewCard from "examples/Cards/ReviewCards/DefaultReviewCard";
 
 // Images
-import appleLogo from "assets/images/logos/gray-logos/logo-apple.svg";
-import facebookLogo from "assets/images/logos/gray-logos/logo-facebook.svg";
-import nasaLogo from "assets/images/logos/gray-logos/logo-nasa.svg";
-import vodafoneLogo from "assets/images/logos/gray-logos/logo-vodafone.svg";
-import digitalOceanLogo from "assets/images/logos/gray-logos/logo-digitalocean.svg";
+// import appleLogo from "assets/images/logos/gray-logos/logo-apple.svg";
+// import facebookLogo from "assets/images/logos/gray-logos/logo-facebook.svg";
+// import nasaLogo from "assets/images/logos/gray-logos/logo-nasa.svg";
+// import vodafoneLogo from "assets/images/logos/gray-logos/logo-vodafone.svg";
+// import digitalOceanLogo from "assets/images/logos/gray-logos/logo-digitalocean.svg";
 
 function Information() {
   return (
@@ -44,13 +44,13 @@ function Information() {
           justifyContent="center"
           sx={{ mx: "auto", textAlign: "center" }}
         >
-          <MKTypography variant="h2">Trusted by over</MKTypography>
+          <MKTypography variant="h2">Được tin tưởng bởi hơn</MKTypography>
           <MKTypography variant="h2" color="info" textGradient mb={2}>
-            1,679,477+ web developers
+            100+ khách hàng
           </MKTypography>
           <MKTypography variant="body1" color="text" mb={2}>
-            Many Fortune 500 companies, startups, universities and governmental institutions love
-            Creative Tim&apos;s products.
+            Rất nhiều khách du lịch, doanh nhân, công ty đã lựa chọn Carathon cho hành trình của
+            mình
           </MKTypography>
         </Grid>
         <Grid container spacing={3} sx={{ mt: 8 }}>
@@ -81,7 +81,7 @@ function Information() {
           </Grid>
         </Grid>
         <Divider sx={{ my: 6 }} />
-        <Grid container spacing={3} justifyContent="center">
+        {/* <Grid container spacing={3} justifyContent="center">
           <Grid item xs={6} md={4} lg={2}>
             <MKBox component="img" src={appleLogo} alt="Apple" width="100%" opacity={0.6} />
           </Grid>
@@ -103,7 +103,7 @@ function Information() {
               opacity={0.6}
             />
           </Grid>
-        </Grid>
+        </Grid> */}
       </Container>
     </MKBox>
   );

@@ -21,23 +21,21 @@ import Card from "@mui/material/Card";
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
-import MKSocialButton from "components/MKSocialButton";
+// import MKSocialButton from "components/MKSocialButton";
 
 // Material Kit 2 React examples
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import DefaultFooter from "examples/Footers/DefaultFooter";
-import FilledInfoCard from "examples/Cards/InfoCards/FilledInfoCard";
+// import FilledInfoCard from "examples/Cards/InfoCards/FilledInfoCard";
 
 // Presentation page sections
 import Counters from "pages/Presentation/sections/Counters";
 import Information from "pages/Presentation/sections/Information";
 import DesignBlocks from "pages/Presentation/sections/DesignBlocks";
-import Pages from "pages/Presentation/sections/Pages";
 import Testimonials from "pages/Presentation/sections/Testimonials";
-import Download from "pages/Presentation/sections/Download";
 
 // Presentation page components
-import BuiltByDevelopers from "pages/Presentation/components/BuiltByDevelopers";
+// import BuiltByDevelopers from "pages/Presentation/components/BuiltByDevelopers";
 
 // Routes
 import routes from "routes";
@@ -46,6 +44,9 @@ import footerRoutes from "footer.routes";
 // Images
 import bgImage from "assets/images/homepage-bg-img.jpg";
 import SearchForm from "./sections/SearchForm";
+import Tutorial from "./components/Tutorial";
+import LearnMore from "./sections/LearnMore";
+// import Blog from "./sections/Blog";
 
 function Presentation() {
   return (
@@ -114,8 +115,9 @@ function Presentation() {
         <Counters />
         <Information />
         <DesignBlocks />
-        <Pages />
-        <Container sx={{ mt: 6 }}>
+        <Tutorial />
+        {/* <Blog /> */}
+        {/* <Container sx={{ mt: 6 }}>
           <BuiltByDevelopers />
         </Container>
         <Container>
@@ -161,10 +163,10 @@ function Presentation() {
               />
             </Grid>
           </Grid>
-        </Container>
+        </Container> */}
         <Testimonials />
-        <Download />
-        <MKBox pt={18} pb={6}>
+        <LearnMore />
+        {/* <MKBox pt={18} pb={6}>
           <Container>
             <Grid container spacing={3}>
               <Grid item xs={12} lg={5} ml="auto" sx={{ textAlign: { xs: "center", lg: "left" } }}>
@@ -215,9 +217,9 @@ function Presentation() {
               </Grid>
             </Grid>
           </Container>
-        </MKBox>
+        </MKBox> */}
       </Card>
-      <MKBox pt={6} px={1} mt={6}>
+      <MKBox pt={6} pb={5} px={1} mt={6}>
         <DefaultFooter content={footerRoutes} />
       </MKBox>
     </>

@@ -21,6 +21,7 @@ import MKBox from "components/MKBox";
 import MKInput from "components/MKInput";
 import MKButton from "components/MKButton";
 import MKTypography from "components/MKTypography";
+import MKAlert from "components/MKAlert";
 
 // Material Kit 2 React examples
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
@@ -31,7 +32,8 @@ import routes from "routes";
 import footerRoutes from "footer.routes";
 
 // Image
-import bgImage from "assets/images/illustrations/illustration-reset.jpg";
+import bgImage from "assets/images/contact_us_img.jpg";
+// import bgImage from "assets/images/illustrations/illustration-reset.jpg";
 import { Autocomplete } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import { useDispatch, useSelector } from "react-redux";
@@ -58,6 +60,7 @@ function ContactUs() {
   const phone = useSelector((state) => state.phone.value);
   const email = useSelector((state) => state.email.value);
   const [extraRequest, setExtraRequest] = useState("");
+  const [success, setSuccess] = useState(false);
   const dispatch = useDispatch();
 
   const handleSendRequest = () => {
@@ -73,6 +76,9 @@ function ContactUs() {
       extraRequest,
     };
     sendRequest(payload);
+    setTimeout(() => {
+      setSuccess(true);
+    }, 1000);
   };
 
   return (
@@ -97,7 +103,11 @@ function ContactUs() {
             borderRadius="lg"
             ml={2}
             mt={2}
-            sx={{ backgroundImage: `url(${bgImage})` }}
+            sx={{
+              backgroundImage: `url(${bgImage})`,
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+            }}
           />
         </Grid>
         <Grid
@@ -241,14 +251,17 @@ function ContactUs() {
                   </Grid>
                 </Grid>
                 <Grid container item justifyContent="center" xs={12} mt={5} mb={2}>
-                  <MKButton
-                    onClick={handleSendRequest}
-                    variant="gradient"
-                    color="info"
-                    disabled={!name || !phone}
-                  >
-                    Gửi yêu cầu thuê xe
-                  </MKButton>
+                  {success && <MKAlert color="success">Gửi yêu cầu thành công</MKAlert>}
+                  {!success && (
+                    <MKButton
+                      onClick={handleSendRequest}
+                      variant="gradient"
+                      color="info"
+                      disabled={(!email && !phone) || success}
+                    >
+                      Gửi yêu cầu thuê xe
+                    </MKButton>
+                  )}
                 </Grid>
               </MKBox>
             </MKBox>

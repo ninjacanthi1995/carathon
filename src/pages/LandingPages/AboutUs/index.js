@@ -21,7 +21,7 @@ import Card from "@mui/material/Card";
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
-import MKButton from "components/MKButton";
+// import MKButton from "components/MKButton";
 
 // Material Kit 2 React examples
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
@@ -89,17 +89,17 @@ function AboutUs() {
                 },
               })}
             >
-              Work with an amazing design
+              Chất lượng trải nghiệm của khách hàng là ưu tiên hàng đầu
             </MKTypography>
             <MKTypography variant="body1" color="white" opacity={0.8} mt={1} mb={3}>
-              We&apos;re constantly trying to express ourselves and actualize our dreams. If you
-              have the opportunity to play this game
+              Sứ mệnh của chúng tôi là giúp cho bạn có một trải nghiệm thuê xe NHANH CHÓNG - AN TOÀN
+              - TIỆN LỢI
             </MKTypography>
-            <MKButton color="default" sx={{ color: ({ palette: { dark } }) => dark.main }}>
+            {/* <MKButton color="default" sx={{ color: ({ palette: { dark } }) => dark.main }}>
               create account
-            </MKButton>
+            </MKButton> */}
             <MKTypography variant="h6" color="white" mt={8} mb={1}>
-              Find us on
+              Theo dõi chúng tôi trên
             </MKTypography>
             <MKBox display="flex" justifyContent="center" alignItems="center">
               <MKTypography component="a" variant="body1" color="white" href="#" mr={3}>

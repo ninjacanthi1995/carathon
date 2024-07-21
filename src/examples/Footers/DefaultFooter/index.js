@@ -28,20 +28,28 @@ import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
 function DefaultFooter({ content }) {
-  const { brand, socials, menus, copyright } = content;
+  const { brand, socials, menus } = content;
 
   return (
     <MKBox component="footer">
       <Container>
-        <Grid container spacing={3}>
-          <Grid item xs={12} md={3} sx={{ ml: "auto", mb: 3 }}>
-            <MKBox>
-              <Link to={brand.route}>
-                <MKBox component="img" src={brand.image} alt={brand.name} maxWidth="2rem" mb={2} />
-              </Link>
-              <MKTypography variant="h6">{brand.name}</MKTypography>
-            </MKBox>
-            <MKBox display="flex" alignItems="center" mt={3}>
+        <Grid container spacing={3} display="flex" justifyContent="space-between">
+          <Grid
+            item
+            xs={12}
+            md={4}
+            sx={{ ml: "auto", mb: 3 }}
+            display="flex"
+            gap={3}
+            alignItems="center"
+          >
+            {/* <MKBox display="flex" alignItems="center" gap={3}> */}
+            <Link to={brand.route}>
+              <MKBox component="img" src={brand.image} alt={brand.name} maxWidth="2rem" />
+            </Link>
+            <MKTypography variant="h6">{brand.name}</MKTypography>
+            {/* </MKBox> */}
+            <MKBox display="flex" alignItems="center">
               {socials.map(({ icon, link }, key) => (
                 <MKTypography
                   key={link}
@@ -74,17 +82,18 @@ function DefaultFooter({ content }) {
                 {items.map(({ name, route, href }) => (
                   <MKBox key={name} component="li" p={0} m={0} lineHeight={1.25}>
                     {href ? (
-                      <MKTypography
-                        component="a"
-                        href={href}
-                        target="_blank"
-                        rel="noreferrer"
-                        variant="button"
-                        fontWeight="regular"
-                        textTransform="capitalize"
-                      >
-                        {name}
-                      </MKTypography>
+                      <Link to={href}>
+                        <MKTypography
+                          component="a"
+                          target="_blank"
+                          rel="noreferrer"
+                          variant="button"
+                          fontWeight="regular"
+                          textTransform="capitalize"
+                        >
+                          {name}
+                        </MKTypography>
+                      </Link>
                     ) : (
                       <MKTypography
                         component={Link}
@@ -101,9 +110,9 @@ function DefaultFooter({ content }) {
               </MKBox>
             </Grid>
           ))}
-          <Grid item xs={12} sx={{ textAlign: "center", my: 3 }}>
+          {/* <Grid item xs={12} sx={{ textAlign: "center", my: 3 }}>
             {copyright}
-          </Grid>
+          </Grid> */}
         </Grid>
       </Container>
     </MKBox>

@@ -30,6 +30,7 @@ import Find from "pages/Find/index";
 // Material Kit 2 React routes
 import routes from "routes";
 import ContactUs from "pages/LandingPages/ContactUs";
+import AboutUs from "pages/LandingPages/AboutUs";
 
 export default function App() {
   const { pathname } = useLocation();
@@ -61,6 +62,7 @@ export default function App() {
         <Route path="/presentation" element={<Presentation />} />
         <Route path="/find" element={<Find />} />
         <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/about-us" element={<AboutUs />} />
         <Route path="*" element={<Navigate to="/presentation" />} />
       </Routes>
     </ThemeProvider>

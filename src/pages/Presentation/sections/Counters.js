@@ -33,25 +33,26 @@ function Counters() {
             <DefaultCounterCard
               count={70}
               suffix="+"
-              title="Coded Elements"
-              description="From buttons, to inputs, navbars, alerts or cards, you are covered"
+              title="Đơn đặt hàng"
+              description="Carathon luôn là sự lựa chọn hàng đầu cho khách hàng có nhu cầu thuê xe du lịch châu Âu"
             />
           </Grid>
           <Grid item xs={12} md={4} display="flex">
             <Divider orientation="vertical" sx={{ display: { xs: "none", md: "block" }, mx: 0 }} />
             <DefaultCounterCard
-              count={15}
+              count={20}
               suffix="+"
-              title="Design Blocks"
-              description="Mix the sections, change the colors and unleash your creativity"
+              title="Loại xe"
+              description="Khách hàng có thể thoải mái lựa chọn loại xe phù hợp với nhu cầu"
             />
             <Divider orientation="vertical" sx={{ display: { xs: "none", md: "block" }, ml: 0 }} />
           </Grid>
           <Grid item xs={12} md={4}>
             <DefaultCounterCard
-              count={4}
-              title="Pages"
-              description="Save 3-4 weeks of work when you use our pre-made pages for your website"
+              count={50}
+              suffix="+"
+              title="Thành phố"
+              description="Bạn có thể linh hoạt nhận và giao xe ở bất cứ đâu trên khắp châu Âu"
             />
           </Grid>
         </Grid>
