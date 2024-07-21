@@ -1,1 +1,1 @@
-export default [{ label: "Paris" }, { label: "Lyon" }, { label: "Barcelona" }];
+export default [{ label: "Paris", value: 1 }, { label: "Lyon" }, { label: "Barcelona" }];

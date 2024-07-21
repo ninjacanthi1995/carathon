@@ -25,13 +25,20 @@ import cities from "pages/Presentation/sections/data/citiesData";
 import { useDispatch, useSelector } from "react-redux";
 import { setPickupDate } from "reduxData/slices/pickupDateSlice";
 import { setReturnDate } from "reduxData/slices/returnDateSlice";
+// import { setPickupCity } from "reduxData/slices/pickupCitySlice";
+// import { setReturnCity } from "reduxData/slices/pickupCitySlice";
 import MKDatePicker from "components/MKDatePicker";
 // import { useState } from "react";
 import { Link } from "react-router-dom";
+import { setPickupCity } from "reduxData/slices/pickupCitySlice";
+import { setReturnCity } from "reduxData/slices/returnCitySlice";
 
 function SearchForm() {
   const pickupDate = useSelector((state) => state.pickupDate.value);
   const returnDate = useSelector((state) => state.returnDate.value);
+  const pickupCity = useSelector((state) => state.pickupCity.value);
+  const returnCity = useSelector((state) => state.returnCity.value);
+
   const dispatch = useDispatch();
 
   return (
@@ -50,6 +57,11 @@ function SearchForm() {
               id="combo-box-demo"
               options={cities}
               renderInput={(params) => <TextField {...params} label="Điểm nhận" />}
+              onChange={(e, val) => {
+                console.log("val", val);
+                dispatch(setPickupCity(val.label));
+              }}
+              value={pickupCity}
             />
           </Grid>
           <Grid item xs={12} md={3}>
@@ -58,6 +70,11 @@ function SearchForm() {
               id="combo-box-demo"
               options={cities}
               renderInput={(params) => <TextField {...params} label="Điểm trả" />}
+              onChange={(e, val) => {
+                console.log("val", val);
+                dispatch(setReturnCity(val.label));
+              }}
+              value={returnCity}
             />
           </Grid>
           <Grid item xs={12} md={3} xl={2}>

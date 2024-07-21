@@ -28,24 +28,28 @@ import MKTypography from "components/MKTypography";
 import ExampleCard from "pages/Presentation/components/ExampleCard";
 
 // Data
-import data from "pages/Presentation/sections/data/designBlocksData";
+import data from "pages/Presentation/sections/data/carTypeData";
+import { useDispatch } from "react-redux";
+import { setCarType } from "reduxData/slices/carTypeSlice";
 
 function DesignBlocks() {
-  const renderData = data.map(({ title, items }) => (
-    <Grid container spacing={3} sx={{ mb: 10 }} key={title}>
+  const dispatch = useDispatch();
+
+  const renderData = (
+    <Grid container spacing={3} sx={{ mb: 10 }} key="car-type">
       <Grid item xs={12} lg={12}>
         <Grid container spacing={3}>
-          {items.map(({ image, name, price, route, pro }) => (
-            <Grid item xs={12} md={4} sx={{ mb: 2 }} key={name}>
-              <Link to={pro ? "/" : route}>
-                <ExampleCard image={image} name={name} price={price} pro={pro} />
+          {data.map(({ image, label, price }) => (
+            <Grid item xs={12} md={4} sx={{ mb: 2 }} key={label}>
+              <Link to="/contact-us" onClick={() => dispatch(setCarType(label))}>
+                <ExampleCard image={image} name={label} price={price} />
               </Link>
             </Grid>
           ))}
         </Grid>
       </Grid>
     </Grid>
-  ));
+  );
 
   return (
     <MKBox component="section" my={6} py={6}>

@@ -38,11 +38,42 @@ import { useDispatch, useSelector } from "react-redux";
 import { setPickupDate } from "reduxData/slices/pickupDateSlice";
 import { setReturnDate } from "reduxData/slices/returnDateSlice";
 import MKDatePicker from "components/MKDatePicker";
+import { sendRequest } from "api";
+import { setPickupCity } from "reduxData/slices/pickupCitySlice";
+import { setReturnCity } from "reduxData/slices/returnCitySlice";
+import carTypeData from "pages/Presentation/sections/data/carTypeData";
+import citiesData from "pages/Presentation/sections/data/citiesData";
+import { setName } from "reduxData/slices/nameSlice";
+import { setPhone } from "reduxData/slices/phoneSlice";
+import { useState } from "react";
+import { setEmail } from "reduxData/slices/emailSlice";
 
 function ContactUs() {
   const pickupDate = useSelector((state) => state.pickupDate.value);
   const returnDate = useSelector((state) => state.returnDate.value);
+  const pickupCity = useSelector((state) => state.pickupCity.value);
+  const returnCity = useSelector((state) => state.returnCity.value);
+  const carType = useSelector((state) => state.carType.value);
+  const name = useSelector((state) => state.name.value);
+  const phone = useSelector((state) => state.phone.value);
+  const email = useSelector((state) => state.email.value);
+  const [extraRequest, setExtraRequest] = useState("");
   const dispatch = useDispatch();
+
+  const handleSendRequest = () => {
+    const payload = {
+      name,
+      phone,
+      email,
+      carType,
+      pickupCity,
+      returnCity,
+      pickupDate,
+      returnDate,
+      extraRequest,
+    };
+    sendRequest(payload);
+  };
 
   return (
     <>
@@ -110,28 +141,65 @@ function ContactUs() {
               </MKTypography>
               <MKBox width="100%" component="form" method="post" autoComplete="off">
                 <Grid container spacing={3}>
+                  <Grid item xs={12} md={6}>
+                    <MKInput
+                      label="Tên"
+                      sx={{ width: "100%" }}
+                      onChange={(e) => {
+                        dispatch(setName(e.target.value));
+                      }}
+                      value={name}
+                    />
+                  </Grid>
+                  <Grid item xs={12} md={6}>
+                    <MKInput
+                      label="Điện thoại"
+                      sx={{ width: "100%" }}
+                      onChange={(e) => dispatch(setPhone(e.target.value))}
+                      value={phone}
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <MKInput
+                      label="Email"
+                      sx={{ width: "100%" }}
+                      onChange={(e) => dispatch(setEmail(e.target.value))}
+                      value={email}
+                    />
+                  </Grid>
                   <Grid item xs={12}>
                     <Autocomplete
                       disablePortal
                       id="combo-box-demo"
-                      options={[]}
+                      options={carTypeData}
                       renderInput={(params) => <TextField {...params} label="Loại xe" />}
+                      defaultValue={carType}
                     />
                   </Grid>
                   <Grid item xs={12} md={6}>
                     <Autocomplete
                       disablePortal
                       id="combo-box-demo"
-                      options={[]}
+                      options={citiesData}
                       renderInput={(params) => <TextField {...params} label="Điểm nhận" />}
+                      onChange={(e, val) => {
+                        console.log("val", val);
+                        dispatch(setPickupCity(val.label));
+                      }}
+                      value={pickupCity}
                     />
                   </Grid>
                   <Grid item xs={12} md={6}>
                     <Autocomplete
                       disablePortal
                       id="combo-box-demo"
-                      options={[]}
+                      options={citiesData}
                       renderInput={(params) => <TextField {...params} label="Điểm trả" />}
+                      onChange={(e, val) => {
+                        console.log("val", val);
+                        dispatch(setReturnCity(val.label));
+                      }}
+                      value={returnCity}
                     />
                   </Grid>
                   <Grid item xs={12} md={6}>
@@ -167,11 +235,18 @@ function ContactUs() {
                       multiline
                       fullWidth
                       rows={6}
+                      onChange={(e) => setExtraRequest(e.target.value)}
+                      value={extraRequest}
                     />
                   </Grid>
                 </Grid>
                 <Grid container item justifyContent="center" xs={12} mt={5} mb={2}>
-                  <MKButton type="submit" variant="gradient" color="info">
+                  <MKButton
+                    onClick={handleSendRequest}
+                    variant="gradient"
+                    color="info"
+                    disabled={!name || !phone}
+                  >
                     Gửi yêu cầu thuê xe
                   </MKButton>
                 </Grid>
