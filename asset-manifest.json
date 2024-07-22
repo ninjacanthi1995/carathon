@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/carathon/static/css/main.dd6a70ae.css",
-    "main.js": "/carathon/static/js/main.7636470d.js",
+    "main.js": "/carathon/static/js/main.705ccd58.js",
     "static/media/rotating-card-bg-front.jpeg": "/carathon/static/media/rotating-card-bg-front.bdcdfadc0dacb9bc5f23.jpeg",
     "static/media/macbook.png": "/carathon/static/media/macbook.e0a8c5d5cc02d71b6d86.png",
     "static/media/bg-coworking.jpeg": "/carathon/static/media/bg-coworking.06bccc47fe6ae5366bf8.jpeg",
@@ -25,23 +25,20 @@
     "static/media/tutorial_2.jpg": "/carathon/static/media/tutorial_2.d12bb794796769c9fc52.jpg",
     "static/media/team-4.jpg": "/carathon/static/media/team-4.85c82b6e60178804017f.jpg",
     "static/media/tutorial_3.jpg": "/carathon/static/media/tutorial_3.a58648d8b7d98726aea8.jpg",
-    "static/media/logo-digitalocean.svg": "/carathon/static/media/logo-digitalocean.2a34c59e2d333aeeaef95fd474297765.svg",
     "static/media/logo-pinterest.svg": "/carathon/static/media/logo-pinterest.79835f813a45dcaf7b7f09c9e5d6f768.svg",
     "static/media/tutorial_1.jpg": "/carathon/static/media/tutorial_1.35739f525742301ff883.jpg",
     "static/media/tutorial_4.jpg": "/carathon/static/media/tutorial_4.191e6a825e1207792a31.jpg",
     "static/media/logo-vodafone.svg": "/carathon/static/media/logo-vodafone.64bd2eee2378660390ef68598cd9220c.svg",
     "static/media/logo-spotify.svg": "/carathon/static/media/logo-spotify.64b875da4a310812bc2a8793cbd5d334.svg",
-    "static/media/logo-facebook.svg": "/carathon/static/media/logo-facebook.628f2a8a471009dffecd3ea2745e37b0.svg",
     "static/media/logo-coinbase.svg": "/carathon/static/media/logo-coinbase.97dccf42a428602b2137b660528aa00f.svg",
-    "static/media/logo-apple.svg": "/carathon/static/media/logo-apple.1098fa39e472270297c7c8a2dce460ad.svg",
     "static/media/logo-nasa.svg": "/carathon/static/media/logo-nasa.b4e79ad93e48f27643c48621609ba18b.svg",
     "static/media/logo-netflix.svg": "/carathon/static/media/logo-netflix.41468e1be7ec61f28c77c2d4da86083e.svg",
     "index.html": "/carathon/index.html",
     "main.dd6a70ae.css.map": "/carathon/static/css/main.dd6a70ae.css.map",
-    "main.7636470d.js.map": "/carathon/static/js/main.7636470d.js.map"
+    "main.705ccd58.js.map": "/carathon/static/js/main.705ccd58.js.map"
   },
   "entrypoints": [
     "static/css/main.dd6a70ae.css",
-    "static/js/main.7636470d.js"
+    "static/js/main.705ccd58.js"
   ]
 }
