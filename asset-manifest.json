@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/carathon/static/css/main.dd6a70ae.css",
-    "main.js": "/carathon/static/js/main.a1897a1e.js",
+    "main.js": "/carathon/static/js/main.ac5bdfcd.js",
     "static/media/rotating-card-bg-front.jpeg": "/carathon/static/media/rotating-card-bg-front.bdcdfadc0dacb9bc5f23.jpeg",
     "static/media/macbook.png": "/carathon/static/media/macbook.e0a8c5d5cc02d71b6d86.png",
     "static/media/rotating-card-bg-back.jpeg": "/carathon/static/media/rotating-card-bg-back.183088de91adb283a9ae.jpeg",
-    "static/media/illustration-reset.jpg": "/carathon/static/media/illustration-reset.c5f36c0c2262b9ad6165.jpg",
     "static/media/homepage-bg-img.jpg": "/carathon/static/media/homepage-bg-img.f1c4f70243b9bf9b0014.jpg",
     "static/media/waves-white.svg": "/carathon/static/media/waves-white.dcb2ce8579b019d0f73a64c138dae945.svg",
     "static/media/bg-about-us.jpg": "/carathon/static/media/bg-about-us.cf9a123e2a3d371d53da.jpg",
+    "static/media/contact_us_img.jpg": "/carathon/static/media/contact_us_img.46c8886a82078d5e4481.jpg",
     "static/media/bruce-mars.jpg": "/carathon/static/media/bruce-mars.8a606c4a6dab54c9ceff.jpg",
     "static/media/team-5.jpg": "/carathon/static/media/team-5.d59ab7b9f95f1169cf83.jpg",
     "static/media/ivana-square.jpg": "/carathon/static/media/ivana-square.f7bc23b269d1d2509c82.jpg",
@@ -25,10 +25,10 @@
     "static/media/logo-netflix.svg": "/carathon/static/media/logo-netflix.41468e1be7ec61f28c77c2d4da86083e.svg",
     "index.html": "/carathon/index.html",
     "main.dd6a70ae.css.map": "/carathon/static/css/main.dd6a70ae.css.map",
-    "main.a1897a1e.js.map": "/carathon/static/js/main.a1897a1e.js.map"
+    "main.ac5bdfcd.js.map": "/carathon/static/js/main.ac5bdfcd.js.map"
   },
   "entrypoints": [
     "static/css/main.dd6a70ae.css",
-    "static/js/main.a1897a1e.js"
+    "static/js/main.ac5bdfcd.js"
   ]
 }
